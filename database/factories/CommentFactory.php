@@ -20,6 +20,7 @@ class CommentFactory extends Factory
             'user_id' => rand(1, 10),
             'post_id' => rand(1, 100),
             'content' => $this->faker->sentence(),
+            'accepted' => $this->faker->randomElement(['y','n']),
         ];
     }
 }

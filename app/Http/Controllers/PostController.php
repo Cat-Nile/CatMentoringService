@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+
 use App\Models\Post;
+use App\Models\Comment;
 use App\Http\Requests\PostRequest;
+
 
 class PostController extends Controller
 {
+
     public function index() {
-        $posts = Post::orderBy('created_at', 'desc')->with(['categories', 'comments', 'comments.user', 'user'])->paginate(10);
-        logger($posts);
+        $posts = Post::orderBy('created_at', 'desc')
+        ->with(['comments', 'comments.user', 'user'])
+        ->paginate(9);
         return response()->json($posts);
     }
 
@@ -21,24 +27,30 @@ class PostController extends Controller
             'content' => 'required',
         ]);
         //*/
+        $validator = Validator::make($request->all(), [
+            'subject' => 'required',
+            'content' => 'required',
+            'category' => 'required',
+        ]);
 
-        $params = $request->only(['subject', 'content']);
+        if($validator->fails()) {
+            return response()->json(['message' => '폼 검증 실패', 'errors' => $validator->errors()], 422);
+        }
+
+        $params = $request->only(['subject', 'content', 'category']);
         $params['user_id'] = $request->user()->id;
-        $subject = $request->input('subject');
-        $content = $request->input('content');
-        $ids = $request->input('category_ids');
+        // $subject = $request->input('subject');
+        // $content = $request->input('content');
+        // $category = $request->input('category');
 
-                /*
-        $post = new Post();
-        $post->subject = $subject;
-        $post->content = $content;
-        $post->save();
-        //*/
-
+        // $post = new Post();
+        // $post->subject = $subject;
+        // $post->content = $content;
+        // $post->content = $category;
+        
+        // $post->save();
         $post = Post::create($params);
-        $post->categories()->sync($ids);
-        $result = Post::where('id', $post->id)->with(['user', 'categories', 'comments.user', ])->first();
-        return response()->json($result);
+        return response()->json($post);
     }
 
     public function read($id) {
@@ -70,12 +82,10 @@ class PostController extends Controller
 
         $subject = $request->input('subject');
         $content = $request->input('content');
-        $ids = $request->input('category_ids');
 
         if($subject) $post->subject = $subject;
         if($content) $post->content = $content;
         $post->save();
-        $post->categories()->sync($ids);
         return response()->json($post);
     }
 
@@ -92,10 +102,12 @@ class PostController extends Controller
             return response()
                 ->json(['message' => '권한이 없습니다.'], 403);
         }
-        logger($user->id);
-        logger($post->post_id);
+        $comment=Comment::where('post_id', $id)->count();
+        if($comment > 0){
+            return response()
+                ->json(['message' => '답글이 달린 질문은 삭제할 수 없습니다.'], 400);
+        }
         $post->delete();
-
         return response()->json(['message' => '삭제되었습니다.']);
     }
 

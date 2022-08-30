@@ -11,10 +11,26 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+
+    public function index()
+    {
+        $users =  User::all();
+        return response()->json([
+            'success'=>true,
+            'message'=> 'Display a listing of the resource.',
+            'data'  => $users
+        ]);
+    }
+
     public function signUp(Request $request) {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
+            'age' => 'required|integer|between:1,15',
+            'breed' => ['required', 'in:turkish_angora,siamese,scottish_fold,russian_blue,munchkin,
+            korean_short_hair,snowshoe'],
+            'hair' => ['required', 'in:white,grey,black,tricolor,tuxedo,mackerel_tabby,ginger'],
+            'role' => ['required', 'in:mentor,mentee'],
             'password' => 'required|min:4',
             'password_confirmation' => 'required|same:password',
         ]);
@@ -23,7 +39,7 @@ class AuthController extends Controller
             return response()->json(['message' => '폼 검증 실패', 'errors' => $validator->errors()], 422);
         }
 
-        $params = $request->only(['name', 'email', 'password']);
+        $params = $request->only(['name', 'email', 'password', 'age', 'breed', 'hair', 'role']);
         $params['password'] = bcrypt($params['password']); 
         $user = User::create($params);
         return response()->json($user);
@@ -41,12 +57,6 @@ class AuthController extends Controller
         else{
             return response()->json(['message' => '로그인 정보를 확인하세요'], 400);
         }
-        
-        
-        
-        
-        
-
         /*
         1. email과 일치하는 사용자 찾기
         2. 비밀번호 암호화 확인

@@ -13,9 +13,8 @@ class Post extends Model
         'user_id',
         'subject',
         'content',
+        'category',
     ];
-
-
 
     public function comments() {
         return $this->hasMany(\App\Models\Comment::class);
