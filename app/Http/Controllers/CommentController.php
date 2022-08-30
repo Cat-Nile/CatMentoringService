@@ -15,8 +15,8 @@ class CommentController extends Controller
         if(!$post) {
             return abort(404);
         }
-        if($counter > 3){
-            return abort(400);
+        if($counter >= 3){
+            return response()->json(['message' => '답글 3개를 초과하여 게시할 수 없습니다.']);
         }
         $user = $request->user();
         $content = $request->input('content');
