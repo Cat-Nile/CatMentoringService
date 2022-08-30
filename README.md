@@ -11,6 +11,50 @@
  <h2>⌛ 개발 기간</h2> 
  2022/08/25 ~ 2022/08/30
 
+# Getting started
+
+## Installation
+
+Please check the official laravel installation guide for server requirements before you start.
+
+You have to follow this MySQL Settings
+- user: root
+- password: test1234
+- database: laravel
+
+To make new database, use this command
+```mysql
+create database laravel;
+```
+
+Clone the repository
+```zsh
+    git clone https://github.com/Cat-Nile/CatMentoringService.git
+```
+Switch to the repo folder
+```zsh
+    cd CatMentoringService
+```
+Install all the dependencies using composer
+```zsh
+    composer install
+```
+Copy the example env file and make the required configuration changes in the .env file
+```zsh
+    cp .env.example .env
+```
+Run the database migrations (**Set the database connection in .env before migrating**)
+```zsh
+    php artisan migrate:refresh --seed
+```
+Start the local development server
+```zsh
+    php artisan serve
+```
+
+You can now access the server at http://localhost:8000
+
+  
 ## 기획
 고양이 멘토가 멘티들에게 익명 멘토링을 해주는 서비스를 제작하려고 합니다.
 <br><br>
