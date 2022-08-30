@@ -18,10 +18,10 @@ class UserSeeder extends Seeder
             'email' => 'user@user.com',
             'password' => bcrypt('password'),
             'name' => '고냥이',
-            'breed' => 'korean_short_hair',
+            'breed' => '먼치킨',
             'age' => 10,
-            'hair' => 'black',
-            'role' => 'mentor',
+            'hair' => '삼색',
+            'role' => '멘토',
         ]);
         \App\Models\User::factory()->times(9)->create();
     }

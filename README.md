@@ -7,10 +7,18 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# 고양이 온라인 익명 멘토링 서비스
+## 개발 기간
+<div>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+  <h2> ⌛ 개발 기간  </h2> 
+ 2022/08/12  ~ 2022/08/10
+ <br><br>
+  </div> 
+## 기획
+고양이 멘토가 멘티들에게 익명 멘토링을 해주는 서비스를 제작하려고 합니다.
 
+질문(예시)
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
 - Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.

@@ -27,10 +27,10 @@ class AuthController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'age' => 'required|integer|between:1,15',
-            'breed' => ['required', 'in:turkish_angora,siamese,scottish_fold,russian_blue,munchkin,
-            korean_short_hair,snowshoe'],
-            'hair' => ['required', 'in:white,grey,black,tricolor,tuxedo,mackerel_tabby,ginger'],
-            'role' => ['required', 'in:mentor,mentee'],
+            'breed' => ['required', 'in:터키시앙고라,샴,스코티시폴드,러시안블루,먼치킨,
+            코리안쇼트헤어,스노우슈'],
+            'hair' => ['required', 'in:흰색,회색,검정색,삼색,턱시도,고등어,치즈'],
+            'role' => ['required', 'in:멘토,멘티'],
             'password' => 'required|min:4',
             'password_confirmation' => 'required|same:password',
         ]);
@@ -44,6 +44,7 @@ class AuthController extends Controller
         $user = User::create($params);
         return response()->json($user);
     }
+    
     public function signIn(Request $request) {
         $params = $request->only(['email', 'password']);
         if(Auth::attempt($params)){

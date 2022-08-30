@@ -18,7 +18,7 @@ class CommentFactory extends Factory
     {
         return [
             'user_id' => rand(1, 10),
-            'post_id' => rand(1, 50),
+            'post_id' => rand(1, 25),
             'content' => $this->faker->sentence(),
             'accepted' => $this->faker->randomElement(['y','n']),
         ];
