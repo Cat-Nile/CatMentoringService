@@ -255,4 +255,4 @@ You can now access the server at http://localhost:8000
 
 > - Back-End :  <img src="https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=White"/>&nbsp;<img src="https://img.shields.io/badge/Laravel-FF2D20?style=flat&logo=laravel&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/MySQL 8.0-4479A1.svg?style=flat&logo=mysql&logoColor=white"/>
 >
-> - ETC　　　:  <img src="https://img.shields.io/badge/Git-F05032?style=flat-badge&logo=Git&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/Github-181717?style=flat-badge&logo=Github&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/Insomnia-4000BF?style=flat-badge&logo=Insomnia&logoColor=white"/>&nbsp;
+> - ETC　　　:  <img src="https://img.shields.io/badge/Git-F05032?style=flat-badge&logo=Git&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/Github-181717?style=flat-badge&logo=Github&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/Insomnia-4000BF?style=flat-badge&logo=Insomnia&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/VisualStudioCode-007ACC?style=flat-badge&logo=Insomnia&logoColor=white"/>&nbsp;
