@@ -172,64 +172,85 @@ You can now access the server at http://localhost:8000
 <div align="left">
 - 고양이 회원목록 조회
   
-![스크린샷 2022-08-31 시간: 02 39 35](https://user-images.githubusercontent.com/107024591/187506223-6f39cefc-8da0-4b34-981c-b59a4be419ad.png)
+![고양이회원목록조회](https://user-images.githubusercontent.com/107024591/187538821-993ad54f-2633-42a1-aa25-d4605b399537.png)
 </div>
 
   
 <div align="left">
 - 고양이 회원가입
   
-![스크린샷 2022-08-31 시간: 01 23 44](https://user-images.githubusercontent.com/107024591/187504625-f45df979-fe53-4b24-966d-d69b775cd23e.png)
+![회원가입](https://user-images.githubusercontent.com/107024591/187538855-a2932fc6-ad39-4b46-8e8d-e1d82f6d329c.png)
 </div>
 <div align="left">
 - 고양이 로그인(토큰 값 조회)
   
-![스크린샷 2022-08-31 시간: 01 26 51](https://user-images.githubusercontent.com/107024591/187504631-cf1e0739-cf8b-44ed-bf6b-7c4b3fd8718e.png)
+![로그인](https://user-images.githubusercontent.com/107024591/187538840-4cd49ef8-579e-4104-aee3-ac702f2e378b.png)
 </div>
 <div align="left">
 - 질문 목록 조회
   
-![스크린샷 2022-08-31 시간: 01 17 43](https://user-images.githubusercontent.com/107024591/187504618-a6846870-778e-4c1b-9ad9-7927f9b483b4.png)  
+![질문목록조회](https://user-images.githubusercontent.com/107024591/187538849-45044daf-bb03-4c0e-b384-a7fe95a177d7.png)
 </div>
 <div align="left">
 - 질문 단건 조회
   
-![스크린샷 2022-08-31 시간: 01 28 13](https://user-images.githubusercontent.com/107024591/187504635-40e7d067-1331-4c50-80cf-4b99dcf183ef.png)  
+![질문단건조회](https://user-images.githubusercontent.com/107024591/187538843-b01d0f19-82bc-4a6a-9212-1b907495decd.png)
 </div>
 <div align="left">
 - 질문 생성
   
-![스크린샷 2022-08-31 시간: 01 29 59](https://user-images.githubusercontent.com/107024591/187504640-dc4dcdc9-d58b-45f1-a342-99661c5b3c35.png)  
+![질문생성](https://user-images.githubusercontent.com/107024591/187538847-51466e82-459a-46cc-9a49-40583add90bc.png)
 </div>
 <div align="left">
 - 질문 수정
   
-![스크린샷 2022-08-31 시간: 01 30 55](https://user-images.githubusercontent.com/107024591/187504642-1812237b-2ac7-4419-8405-96c979bd01d6.png)  
+![질문수정](https://user-images.githubusercontent.com/107024591/187538848-66e0ccd0-b9c1-4a68-98e1-c1d4a154cb27.png) 
 </div>
 <div align="left">
 - 질문 삭제  
   
-![스크린샷 2022-08-31 시간: 01 31 29](https://user-images.githubusercontent.com/107024591/187504643-a2357aff-ac66-4603-9a97-e768cc0ce5cb.png)  
+![질문삭제](https://user-images.githubusercontent.com/107024591/187539908-1019775b-ea75-4834-88fe-806a02871b26.png)
 </div>
 <div align="left">
 - 답글 생성  
   
-![스크린샷 2022-08-31 시간: 01 35 56](https://user-images.githubusercontent.com/107024591/187504651-7223f4cf-ba1a-49c4-b020-bcbd4ad1559e.png)  
+![답글생성](https://user-images.githubusercontent.com/107024591/187538832-4f19da4f-0032-45b7-8046-14ccb2994e6a.png)
 </div>
 <div align="left">
 - 답글 수정
   
-![스크린샷 2022-08-31 시간: 02 23 27](https://user-images.githubusercontent.com/107024591/187504652-55c6ac78-fca1-4cbd-8ca2-6333d7865019.png)  
+![답글수정](https://user-images.githubusercontent.com/107024591/187538837-fd20daec-db26-4b31-bdff-5589b2b198b3.png)
 </div>
 
 <div align="left">
 - 답글 삭제  
   
-![스크린샷 2022-08-31 시간: 02 25 15](https://user-images.githubusercontent.com/107024591/187504655-19cec577-9eee-4fc5-874f-986984defa14.png)  
+![답글삭제](https://user-images.githubusercontent.com/107024591/187538828-6a566f1e-42d7-4396-886f-5c6eff9c3bae.png)
 </div>
 
-
-
+----
+#### 데이터 제약조건   
+<div align="left">
+- 답글이 달린 경우, 질문 삭제 불가  
+  
+![답글달린_질문은_삭제불가](https://user-images.githubusercontent.com/107024591/187538827-0dfda5a4-aa34-411a-b979-3ec5fd4bd1a9.png)  
+</div>
+<div align="left">
+- 답글 3개 초과 등록 시, 추가 작성 불가  
+  
+![답글3개_초과시_추가작성불가](https://user-images.githubusercontent.com/107024591/187538825-23de0d0e-2985-4c52-b096-885246e1470e.png)    
+</div>
+<div align="left">
+- 채택된 답글은 수정, 삭제 불가  
+  
+![채택답글은_수정_삭제_불가](https://user-images.githubusercontent.com/107024591/187538851-789a66f7-deaf-405d-aa0d-61dfbe3465ea.png)  
+</div>
+<div align="left">
+- 페이지네이션 적용(페이지 당 9개)  
+  
+![페이지네이션9](https://user-images.githubusercontent.com/107024591/187538853-1ca83d20-2241-4062-815f-9a7c6102a8d8.png)  
+</div>
+  
 ## 기술 스택
 
 > - Back-End :  <img src="https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=White"/>&nbsp;<img src="https://img.shields.io/badge/Laravel-FF2D20?style=flat&logo=laravel&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/MySQL 8.0-4479A1.svg?style=flat&logo=mysql&logoColor=white"/>
