@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('user_id');
             $table->string('subject', 160);
             $table->longText('content');
-            $table->enum('category', ['cat_food', 'grooming', 'my_slave_review']);
+            $table->enum('category', ['사료', '그루밍', '집사후기']);
             $table->timestamps();
         });
     }

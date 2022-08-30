@@ -38,6 +38,7 @@ Route::middleware('auth:sanctum')->group(function() {
 
     Route::get('/users', [UserController::class, 'index']);
     Route::post('/posts/{postId}/comments', [CommentController::class, 'create']);
+    Route::patch('/posts/{postId}/comments/{id}', [CommentController::class, 'update']);
     Route::delete('/posts/{postId}/comments/{id}', [CommentController::class, 'delete']);
     Route::post('/posts', [PostController::class, 'create']);
     Route::patch('/posts/{id}', [PostController::class, 'update']);

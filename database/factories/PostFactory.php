@@ -19,8 +19,8 @@ class PostFactory extends Factory
         return [
             'user_id' => rand(1, 10),
             'subject' => $this->faker->sentence(),
-            'content' => $this->faker->paragraphs(3, true),
-            'category' => $this->faker->randomElement(['cat_food','grooming', 'my_slave_review']),
+            'content' => $this->faker->paragraphs(2, true),
+            'category' => $this->faker->randomElement(['사료','그루밍','집사후기']),
         ];
     }
 }
