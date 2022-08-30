@@ -17,7 +17,7 @@
 
 Please check the official laravel installation guide for server requirements before you start.
 
-You have to follow this MySQL Settings
+You have to follow this MySQL Settings(**Very important!!**).
 - user: root
 - password: test1234
 - database: laravel
