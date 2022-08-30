@@ -18,9 +18,9 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->name()."냥이",
+            // 'name' => fake()->name()."냥이",
             'email' => fake()->safeEmail(),
-            'email_verified_at' => now(),
+            // 'email_verified_at' => now(),
             'breed' => $this->faker->randomElement([
                 '터키시앙고라', '샴', '스코티시폴드', '러시안블루', '먼치킨', '코리안쇼트헤어', '스노우슈'
             ]),
